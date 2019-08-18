@@ -15,7 +15,7 @@
 	- your Slack tokens: https://api.slack.com/custom-integrations/legacy-tokens
 - Update channels which your are going to check
 - Run slacktail
-	- `bin/slacktail`
+	- `bin/slacktail start`
 	- or `bin/slacktail_on_docker` for using docker
  
 # ToDO
