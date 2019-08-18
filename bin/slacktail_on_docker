@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+CHANNELS_CONFIG_DIR=${APP_ROOT}/channels_config
+TMP_DIR=${APP_ROOT}/tmp
+VERSION_FROM_ARG=$1
+IMAGE_VERSION=${VERSION_FROM_ARG:-0.1}
+
+docker build -t slactail-ruby:${IMAGE_VERSION} .
+docker run --rm -it -v ${CHANNELS_CONFIG_DIR}:/channels_config -v ${TMP_DIR}:/tmp -t slactail-ruby:${IMAGE_VERSION}

@@ -1,0 +1,9 @@
+by #{history.property.user_name} | to #{history.channel.account.name}.#{history.channel.name} | at #{history.property.time}
+
+= indent history.contents_list&.text&.text
+
+- if history.contents_list.files
+  = partial 'file.haml', files: history.contents_list.files
+- if history.contents_list.attachments
+  = box_partial 'attachment.haml', attachments: history.contents_list.attachments
+\--------------

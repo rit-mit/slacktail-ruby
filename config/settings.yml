@@ -1,0 +1,10 @@
+cache:
+  cache_dir: <%= ENV['CACHE_DIR'] || '/tmp' %>
+slack:
+  api_token: <%= ENV['SLACK_API_TOKEN'] %>
+  api_token_file_path: <%= ENV['SLACK_API_TOKEN_FILE_PATH'] || '' %>
+channels_yaml: <%= ENV['CHANNELS_CONFIG_PATH'] %>
+tail_wait_time:
+  default_sec: 5
+  increase_sec: 2
+  max_sec: 600

@@ -1,0 +1,5 @@
+slack_tokens:
+  - name: default
+    token: 'ABCDEFG567890'
+  - name: home
+    token: 'G567890STURVW'

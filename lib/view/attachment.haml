@@ -1,0 +1,7 @@
+- attachments.each do |attachment|
+  = attachment.pretext
+  = attachment.text
+  = attachment.title
+  - unless attachment.fields.nil?
+    = box_partial 'attachment_field.haml', fields: attachment.fields, box_title: '添付'
+  = attachment.image_context_text

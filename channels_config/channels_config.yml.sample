@@ -1,0 +1,9 @@
+channels:
+  - account: default
+      - name: general
+        color: '#AFAF00'
+      - name: bot-test
+        color: '#FF0000'
+  - account: home
+      - name: general
+        color: '#FF0000'
