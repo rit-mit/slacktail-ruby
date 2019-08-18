@@ -1,0 +1,11 @@
+*.pid
+*.log
+cache_*
+.pryrc
+channel_config.yml
+channel.yml
+channels_config.yml
+slack_config.yml
+slack_tokens.yml
+examples.txt
+

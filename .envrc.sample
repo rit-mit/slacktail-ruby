@@ -1,0 +1,13 @@
+export APP_ROOT='/Users/hogehoge/work/slacktail-ruby'
+
+export PID_DIR=$APP_ROOT/tmp/pid
+export CACHE_DIR=$APP_ROOT/tmp/cache
+export LOG_DIR=$APP_ROOT/tmp/log
+export CHANNEL_YAML=$APP_ROOT/tmp/channel.yml
+
+mkdir -p $PID_DIR
+mkdir -p $CACHE_DIR
+
+export CHANNELS_CONFIG_PATH=$APP_ROOT/channels_config/channels_config.yml
+export SLACK_API_TOKEN_FILE_PATH=$APP_ROOT/channels_config/slack_tokens.yml
+
