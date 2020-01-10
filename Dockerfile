@@ -1,7 +1,7 @@
-FROM ruby:2.6.1
+FROM ruby:2.6.5
 
 ENV DEBCONF_NOWARNINGS=yes
-RUN apt-get update -qq && apt-get install -y ca-certificates openssl locales
+RUN apt-get update -qq && apt-get install -y ca-certificates openssl locales imagemagick libmagickcore-dev libmagickwand-dev
 RUN locale-gen ja_JP.UTF-8
 
 ARG APP_ROOT_IN_CONTAINER=/usr/src/app
@@ -26,12 +26,16 @@ VOLUME /data
 RUN mkdir -p ${APP_ROOT_IN_CONTAINER}
 RUN mkdir -p ${CHANNELS_CONFIG_DIR_IN_CONTAINER}
 RUN mkdir -p ${TMP_DIR_IN_CONTAINER}
+RUN mkdir -p ${PID_DIR}
+RUN mkdir -p ${LOG_DIR}
+RUN mkdir -p ${CACHE_DIR}
 
 COPY Gemfile ${APP_ROOT_IN_CONTAINER}
 COPY Gemfile.lock ${APP_ROOT_IN_CONTAINER}
 RUN gem install bundler -v 1.17.2 && bundle config git.allow_insecure true && bundle install
 
 COPY ./ ${APP_ROOT_IN_CONTAINER}
+COPY ./channels_config ${CHANNELS_CONFIG_DIR_IN_CONTAINER}
 
 ENTRYPOINT ["bin/slacktail", "start"]
 
