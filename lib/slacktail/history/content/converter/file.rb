@@ -25,7 +25,7 @@ module Slacktail
               http_header: { 'Authorization' => "Bearer #{options[:token]}" }
             }
             ::Catpix.build_image_string(url, image_params)
-          rescue ImageMagickError => error
+          rescue Magick::ImageMagickError => error
             pp "ImageMagickError: #{error}"
           end
 
