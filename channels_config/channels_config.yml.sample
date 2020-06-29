@@ -1,9 +1,11 @@
-channels:
+channels_config:
   - account: default
+    channels:
       - name: general
         color: '#AFAF00'
       - name: bot-test
         color: '#FF0000'
   - account: home
+    channels:
       - name: general
         color: '#FF0000'
