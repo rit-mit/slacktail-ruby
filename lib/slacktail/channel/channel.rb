@@ -25,11 +25,6 @@ module Slacktail
         channel_list = ::SlackApi::Channel::List.new(account.token)
         list = channel_list.fetch
 
-        if list.fetch(name, nil).nil?
-          # 見つからなかった場合は、再取得してみる
-          list = channel_listreload_list
-        end
-
         list.fetch(name, '')
       end
     end
