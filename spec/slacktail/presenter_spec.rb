@@ -15,7 +15,7 @@ RSpec.describe ::Slacktail::Presenter do
     end
     let(:history) { double(content_list: content_list, filtered?: false) }
 
-    subject { described_class.new.output(history) }
+    subject { described_class.new.call(history) }
 
     context 'text message' do
       let(:content_files) { nil }
