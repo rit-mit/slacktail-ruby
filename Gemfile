@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'thor'
 gem 'daemons'
 
+gem 'zeitwerk'
+
 gem 'slack-ruby-client'
 
 gem 'activemodel'

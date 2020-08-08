@@ -167,6 +167,7 @@ DEPENDENCIES
   tco
   terminal-table
   thor
+  zeitwerk
 
 BUNDLED WITH
    2.1.4
