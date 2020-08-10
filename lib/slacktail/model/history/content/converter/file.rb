@@ -7,7 +7,6 @@ module Model
         class File < Base
           def convert_url_private_download!(content_object, content)
             mime_type = content['mimetype']
-            binding.pry
             content_object.content_text = if mime_type.include? 'image'
                                             convert_authorized_image_of content['url_private_download']
                                           elsif mime_type.include? 'text'

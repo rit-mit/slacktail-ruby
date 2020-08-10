@@ -31,13 +31,12 @@ module Model
 
           content_list.send("#{attr}=", klass.convert(each_content, options))
         end
-
         content_list
       end
 
       def converter_class(content_type)
         Object
-          .const_get('Slacktail')
+          .const_get('Model')
           .const_get('History')
           .const_get('Content')
           .const_get('Converter')

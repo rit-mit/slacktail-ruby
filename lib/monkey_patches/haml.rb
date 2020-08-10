@@ -4,7 +4,7 @@ require 'terminal-table'
 module Haml
   module Helpers
     def partial(filename, locals = {})
-      filepath = "#{ENV['APP_ROOT']}/lib/view/#{filename}"
+      filepath = "#{ENV['APP_ROOT']}/lib/slacktail/views/#{filename}"
       return '' unless File.exist? filepath
 
       render_with_filepath(filepath, locals)

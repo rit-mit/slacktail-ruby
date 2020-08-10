@@ -1,5 +1,4 @@
 require 'tco'
-require_relative '../haml.rb'
 
 module Operation
   class Presenter
