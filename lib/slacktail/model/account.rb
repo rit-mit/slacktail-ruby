@@ -4,7 +4,7 @@ module Model
   class Account
     attr_accessor :name, :token
 
-    def initialize(name:, token:)
+    def initialize(name, token)
       @name = name
       @token = token
     end
@@ -16,7 +16,7 @@ module Model
 
       raise ArgumentError, "No slack token for account: #{name}" if token.nil?
 
-      new(name: name, token: token)
+      new(name, token)
     end
 
     def self.tokens_from_config

@@ -1,4 +1,4 @@
-RSpec.describe ::Slacktail::History::History do
+RSpec.describe ::Model::History::History do
   describe '.filtered?' do
     let(:text) { 'hello slacktail' }
     let(:content_text) { double(text: text) }

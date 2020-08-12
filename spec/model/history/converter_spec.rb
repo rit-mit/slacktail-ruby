@@ -1,4 +1,6 @@
-RSpec.describe ::Slacktail::History::Converter do
+require 'catpix'
+
+RSpec.describe ::Model::History::Converter do
   describe '.convert_from' do
     include_context 'history message from api'
 
@@ -8,7 +10,7 @@ RSpec.describe ::Slacktail::History::Converter do
 
     let(:options) { { token: Faker::Crypto.md5 } }
     let(:message) { response_from_api.fetch('messages').first }
-    let(:channel_message) { ::Slacktail::Repository::SlackApi::History::Message.new(message) }
+    let(:channel_message) { ::Repository::SlackApi::History::Message.new(message) }
 
     subject { described_class.new(options).convert_from(channel_message) }
 

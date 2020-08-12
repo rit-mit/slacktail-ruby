@@ -8,26 +8,14 @@ module Operation
 
     # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
     def call
-      locks = Queue.new
-      locks.push :lock
+      queues = Queue.new
+      queues.push :lock
 
       Parallel.each(channels, in_threads: channels.count) do |channel|
         loop.with_index do |_, i|
           sleep channel.tail_wait_time if i.positive?
 
-          histories = MessageFetcher.call(channel)
-          if histories.blank? || (histories.is_a?(Array) && histories.count.zero?)
-            channel.increase_tail_wait_time
-            next
-          end
-
-          channel.reset_tail_wait_time
-
-          lock = locks.pop
-          histories.sort_by { |history| history.property.time }.each do |history|
-            puts presenter.call(history) || ''
-          end
-          locks.push lock
+          tail(channel, queues)
         rescue StandardError => e
           pp "rescue #{channel.full_name}"
           puts 'rescue!'.fg('#FF0000')
@@ -35,11 +23,29 @@ module Operation
           pp e.message
           pp e.backtrace
         ensure
-          locks.push lock
+          queues.push :lock
         end
       end
     end
     # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
+
+    def tail(channel, queues)
+      histories = MessageFetcher.call(channel)
+      if histories.blank? || (histories.is_a?(Array) && histories.count.zero?)
+        channel.increase_tail_wait_time
+        return false
+      end
+
+      channel.reset_tail_wait_time
+
+      lock = queues.pop
+      histories.sort_by { |history| history.property.time }.each do |history|
+        puts presenter.call(history) || ''
+      end
+      queues.push lock
+
+      true
+    end
 
     private
 

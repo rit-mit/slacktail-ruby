@@ -1,8 +1,8 @@
-RSpec.describe ::Slacktail::History::Property do
+RSpec.describe ::Model::History::Property do
   describe 'Converter' do
     let(:token) { ::Faker::Lorem.characters(10) }
-    let(:options) { { token: from_object } }
-    let(:converter) { ::Slacktail::History::Property::Converter.new(from_object, options) }
+    let(:options) { { token: token } }
+    let(:converter) { ::Model::History::Property::Converter.new(from_object, options) }
 
     describe '#time' do
       let(:now) { Time.parse('2020-01-10 13:40:30') }

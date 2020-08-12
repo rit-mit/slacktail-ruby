@@ -28,4 +28,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'factory_bot'
+
+  gem 'webmock'
+  gem 'vcr'
 end

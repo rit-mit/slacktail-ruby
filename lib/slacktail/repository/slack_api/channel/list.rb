@@ -38,7 +38,7 @@ module Repository
         end
 
         def fetch_from_api
-          response = client.channels_list(token: token)
+          response = client.conversations_list(token: token)
           return [] unless valid_response? response
 
           response['channels'].each_with_object({}) do |channel, result|

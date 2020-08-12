@@ -1,4 +1,4 @@
-RSpec.describe ::Slacktail::History::Content::Converter::Base do
+RSpec.describe ::Model::History::Content::Converter::Base do
   module TestModule
   end
   module TestModule
@@ -7,13 +7,13 @@ RSpec.describe ::Slacktail::History::Content::Converter::Base do
   end
   module TestModule
     module Converter
-      class File < ::Slacktail::History::Content::Converter::Base
+      class File < ::Model::History::Content::Converter::Base
         def convert_huga!(_content_obj, _content); end
       end
     end
   end
   module TestModule
-    class File < ::Slacktail::History::Content::Converter::Base
+    class File < ::Model::History::Content::Converter::Base
     end
   end
 
