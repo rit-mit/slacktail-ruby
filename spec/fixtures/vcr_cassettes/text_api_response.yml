@@ -1,0 +1,207 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/conversations.list
+    body:
+      encoding: UTF-8
+      string: token=<TOKEN>
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Authorization:
+      - Bearer <TOKEN>
+      User-Agent:
+      - Slack Ruby Client/0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Aug 2020 23:44:58 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 2b0619a75eea9809530e961a35fc0a56
+      X-Oauth-Scopes:
+      - identify,channels:history,channels:read,files:read,users:read
+      X-Accepted-Oauth-Scopes:
+      - channels:read,groups:read,mpim:read,im:read,read
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '711'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-xccr,haproxy-edge-nrt-mud7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channels":[{"id":"CH0TMH03V","name":"general","is_channel":true,"is_group":false,"is_im":false,"created":1552737404,"is_archived":false,"is_general":true,"unlinked":0,"name_normalized":"general","is_shared":false,"parent_conversation":null,"creator":"UH1BDRKD3","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TH10MJNJ0"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"\u5168\u793e\u7684\u306a\u30a2\u30ca\u30a6\u30f3\u30b9\u3068\u696d\u52d9\u95a2\u9023\u306e\u4e8b\u9805","creator":"UH1BDRKD3","last_set":1552737404},"purpose":{"value":"\u3053\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u306f\u30ef\u30fc\u30af\u30b9\u30da\u30fc\u30b9\u5168\u4f53\u306e\u30b3\u30df\u30e5\u30cb\u30b1\u30fc\u30b7\u30e7\u30f3\u3068\u793e\u5185\u30a2\u30ca\u30a6\u30f3\u30b9\u7528\u3067\u3059\u3002\u5168\u30e1\u30f3\u30d0\u30fc\u304c\u3053\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u306b\u53c2\u52a0\u3057\u3066\u3044\u307e\u3059\u3002","creator":"UH1BDRKD3","last_set":1552737404},"previous_names":[],"num_members":3},{"id":"CH0TMH0HH","name":"random","is_channel":true,"is_group":false,"is_im":false,"created":1552737404,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"random","is_shared":false,"parent_conversation":null,"creator":"UH1BDRKD3","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TH10MJNJ0"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"\u4ed5\u4e8b\u306b\u95a2\u4fc2\u306a\u3044\u96d1\u8ac7\u3068\u7d66\u6e6f\u5ba4\u3067\u306e\u304a\u3057\u3083\u3079\u308a","creator":"UH1BDRKD3","last_set":1552737404},"purpose":{"value":"\u4ed5\u4e8b\u306b\u95a2\u4fc2\u306a\u3044\u30da\u30c1\u30e3\u30af\u30c1\u30e3\u3001\u30ef\u30a4\u30ef\u30a4\u3001\u3056\u308f\u3056\u308f\u3068\u3044\u3063\u305f\u30c1\u30e3\u30f3\u30cd\u30eb\u306f\u3001\u4ed5\u4e8b\u306b\u95a2\u4fc2\u3057\u305f\u30c1\u30e3\u30f3\u30cd\u30eb\u3068\u306f\u5225\u306b\u3057\u3066\u304a\u3044\u305f\u307b\u3046\u304c\u3044\u3044\u3067\u3059\u3002","creator":"UH1BDRKD3","last_set":1552737404},"previous_names":[],"num_members":3},{"id":"CH10MJSNQ","name":"bot-test","is_channel":true,"is_group":false,"is_im":false,"created":1552737405,"is_archived":false,"is_general":false,"unlinked":0,"name_normalized":"bot-test","is_shared":false,"parent_conversation":null,"creator":"UH1BDRKD3","is_ext_shared":false,"is_org_shared":false,"shared_team_ids":["TH10MJNJ0"],"pending_shared":[],"pending_connected_team_ids":[],"is_pending_ext_shared":false,"is_member":true,"is_private":false,"is_mpim":false,"topic":{"value":"","creator":"","last_set":0},"purpose":{"value":"","creator":"","last_set":0},"previous_names":[],"num_members":3}],"response_metadata":{"next_cursor":""}}'
+  recorded_at: Wed, 12 Aug 2020 23:44:59 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/conversations.history
+    body:
+      encoding: UTF-8
+      string: channel=CH10MJSNQ&count=5&inclusive=true&latest=1597275899&oldest=1597275233&token=<TOKEN>&unreads=true
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Authorization:
+      - Bearer <TOKEN>
+      User-Agent:
+      - Slack Ruby Client/0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Aug 2020 23:44:59 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - b9ec2bfc86a6e5c71e98f5c7a54965be
+      X-Oauth-Scopes:
+      - identify,channels:history,channels:read,files:read,users:read
+      X-Accepted-Oauth-Scopes:
+      - channels:history,groups:history,mpim:history,im:history,read
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '293'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-ce55,haproxy-edge-nrt-670j
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"latest":"1597275899.000000","oldest":"1597275233.000000","messages":[{"client_msg_id":"736e1a2d-b14d-4d6c-8bf1-4d9b23a34dc4","type":"message","text":"test
+        text!","user":"UH1BDRKD3","ts":"1597275886.001300","team":"TH10MJNJ0","blocks":[{"type":"rich_text","block_id":"ffi","elements":[{"type":"rich_text_section","elements":[{"type":"text","text":"test
+        text!"}]}]}]}],"has_more":false,"unread_count_display":0,"pin_count":0,"channel_actions_ts":null,"channel_actions_count":0}'
+  recorded_at: Wed, 12 Aug 2020 23:44:59 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/users.info
+    body:
+      encoding: UTF-8
+      string: token=<TOKEN>&user=UH1BDRKD3
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Authorization:
+      - Bearer <TOKEN>
+      User-Agent:
+      - Slack Ruby Client/0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Aug 2020 23:44:59 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - c033d7cc32110e6aeee01539e7d8f277
+      X-Oauth-Scopes:
+      - identify,channels:history,channels:read,files:read,users:read
+      X-Accepted-Oauth-Scopes:
+      - users:read
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '567'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-vlt7,haproxy-edge-nrt-asj7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"user":{"id":"UH1BDRKD3","team_id":"TH10MJNJ0","name":"hoge","deleted":false,"color":"9f69e7","real_name":"huga","tz":"Asia\/Tokyo","tz_label":"Japan
+        Standard Time","tz_offset":32400,"profile":{"title":"","phone":"","skype":"","real_name":"huga","real_name_normalized":"huga","display_name":"\u308a\u304a\u3046","display_name_normalized":"\u308a\u304a\u3046","fields":null,"status_text":"","status_emoji":"","status_expiration":0,"avatar_hash":"g4c9d680f5ee","first_name":"huga","last_name":"","image_24":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=24&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-24.png","image_32":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=32&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-32.png","image_48":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=48&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-48.png","image_72":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-72.png","image_192":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=192&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-192.png","image_512":"https:\/\/secure.gravatar.com\/avatar\/f4c9d680f5ee42cebabe1bf67d34301f.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-512.png","status_text_canonical":"","team":"TH10MJNJ0"},"is_admin":true,"is_owner":true,"is_primary_owner":true,"is_restricted":false,"is_ultra_restricted":false,"is_bot":false,"is_app_user":false,"updated":1595917796,"has_2fa":false}}'
+  recorded_at: Wed, 12 Aug 2020 23:44:59 GMT
+recorded_with: VCR 6.0.0

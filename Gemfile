@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'thor'
 gem 'daemons'
 
+gem 'zeitwerk'
+
 gem 'slack-ruby-client'
 
 gem 'activemodel'
@@ -26,4 +28,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'factory_bot'
+
+  gem 'webmock'
+  gem 'vcr'
 end

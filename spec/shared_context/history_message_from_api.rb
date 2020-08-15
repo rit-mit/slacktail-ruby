@@ -1,3 +1,5 @@
+require 'slack-ruby-client'
+
 shared_context 'history message from api' do
   # rubocop:disable all
   let(:response_of_files) do
@@ -74,6 +76,6 @@ shared_context 'history message from api' do
 
   let(:response_from_api) { response_of_text }
   before do
-    allow_any_instance_of(::Slack::Web::Client).to receive(:channels_history).and_return(response_from_api)
+    allow_any_instance_of(::Slack::Web::Client).to receive(:conversations_history).and_return(response_from_api)
   end
 end

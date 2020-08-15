@@ -11,6 +11,7 @@ module Slack
           token_for_req = options[:token] if token_for_req.nil? && !options.fetch(:token, nil).nil?
           options = options.merge(token: token_for_req)
           # 修正終了
+          #
 
           response = connection.send(method) do |request|
             case method
